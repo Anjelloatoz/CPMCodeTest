@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = getIntent().getData(); //We check if the app is started by the redirect uri.
         if(uri != null && uri.toString().startsWith(redirectUri)){ //If so, we store the auth_token to obtain the access token
             String code = uri.getQueryParameter("code");
-            ServiceProxy.getInstance().setAuthToken(code);
-            getUserRepos();
+            ServiceProxy.getInstance().requestAccessToken(code);
         } else{
-            if(ServiceProxy.getInstance().getAuthToken() != null){ //Auth token already available
+            if(ServiceProxy.getInstance().getAccessToken() != null){ //Access token already available
+                Log.e(TAG, "ACCESS TOKEN: "+ServiceProxy.getInstance().getAccessToken());
                 getUserRepos();
             } else{
-                Log.e(TAG, "User NOT loged in"); //We do not have an auth token. This is the first time the app is running. We proceed to the OAuth flow.
+                Log.e(TAG, "User NOT loged in"); //We do not have an access token. This is the first time the app is running. We proceed to the OAuth flow.
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/login/oauth/authorize"+"?client_id="+clientId+"&scope=repo&redirect_uri="+redirectUri));
                 startActivity(intent);
             }
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getUserRepos(){
-        ServiceProxy.getInstance().getAccessToken();
+        ServiceProxy.getInstance().requestUserRepos();
     }
 
     @Override

@@ -38,6 +38,7 @@ public class NetworkBroker {
     private static String TAG = "NetworkBroker";
 
     public static String PATH_ACCESS_TOKEN = "https://github.com/login/oauth/access_token";
+    public static String PATH_USER_REPOS = "https://api.github.com/user/repos";
 
     private static NetworkBroker INSTANCE;
     private final Context context;
@@ -140,8 +141,8 @@ public class NetworkBroker {
                 Map<String, String> map = new HashMap<>();
                 map.put("Content-Type", "application/json");
                 map.put("Accept","application/json");
-                if(PersistenceManager.getInstance().getAuthToken() != null)
-                    map.put("Authorization", "Bearer " + PersistenceManager.getInstance().getAuthToken());
+                if(PersistenceManager.getInstance().getAccessToken() != null)
+                    map.put("Authorization", "Bearer " + PersistenceManager.getInstance().getAccessToken().access_token);
 
                 return map;
             }
@@ -161,5 +162,9 @@ public class NetworkBroker {
 
     public void sendPost(String path, Object payload, final CallbackNetwork callback){
         send(Request.Method.POST, path, payload, callback);
+    }
+
+    public void sendGet(String path,Object payload, final CallbackNetwork callback) {
+        send(Request.Method.GET, path, payload, callback);
     }
 }
