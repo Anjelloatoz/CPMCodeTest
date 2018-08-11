@@ -2,6 +2,7 @@ package anjelloatoz.com.codetestapp;
 
 import android.app.Application;
 
+import anjelloatoz.com.codetestapp.Network.NetworkBroker;
 import anjelloatoz.com.codetestapp.Service.PersistenceManager;
 
 /**
@@ -9,9 +10,11 @@ import anjelloatoz.com.codetestapp.Service.PersistenceManager;
  */
 
 public class CodeTestApplication extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
         PersistenceManager.initInstance(getApplicationContext());
+        NetworkBroker.initInstance(getApplicationContext());
     }
 }
