@@ -16,4 +16,12 @@ public class ServiceProxy {
     public boolean isLoggedIn(){
         return PersistenceManager.getInstance().isLoggedIn();
     }
+
+    public void setAuthToken(String auth_token){
+        PersistenceManager.getInstance().storeAuthToken(auth_token);
+    }
+
+    public String getAuthToken(){
+        return PersistenceManager.getInstance().getAuthToken();
+    }
 }
