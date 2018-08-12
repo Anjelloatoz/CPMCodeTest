@@ -12,10 +12,23 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField "String", "clientId", "\"Iv1.dd3208f9d5475e95\""
+            buildConfigField "String", "clientSecret", "\"1a20861693094fa6245f3cd4e8d80356f0863a3d\""
+            buildConfigField "String", "redirectUri", "\"anjelloatoz://callback\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "clientId", "\"Iv1.dd3208f9d5475e95\""
+            buildConfigField "String", "clientSecret", "\"1a20861693094fa6245f3cd4e8d80356f0863a3d\""
+            buildConfigField "String", "redirectUri", "\"anjelloatoz://callback\""
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
