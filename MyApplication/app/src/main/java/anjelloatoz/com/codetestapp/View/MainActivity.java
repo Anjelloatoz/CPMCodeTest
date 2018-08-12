@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
             ServiceProxy.getInstance().requestAccessToken(code);
         } else{
             if(ServiceProxy.getInstance().getAccessToken() != null){ //Access token already available
-                Log.e(TAG, "ACCESS TOKEN: "+ServiceProxy.getInstance().getAccessToken());
+                Log.d(TAG, "ACCESS TOKEN: "+ServiceProxy.getInstance().getAccessToken());
                 getUserRepos();
             } else{
-                Log.e(TAG, "User NOT loged in"); //We do not have an access token. This is the first time the app is running. We proceed to the OAuth flow.
+                Log.d(TAG, "User NOT loged in"); //We do not have an access token. This is the first time the app is running. We proceed to the OAuth flow.
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/login/oauth/authorize"+"?client_id="+clientId+"&scope=repo&redirect_uri="+redirectUri));
                 startActivity(intent);
             }
@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getUserRepos(){
-        ServiceProxy.getInstance().requestUserRepos();
+        Intent intent = new Intent(this, DataActivity.class);
+        startActivity(intent);
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-
     }
 }

@@ -7,4 +7,9 @@ package anjelloatoz.com.codetestapp.Model;
 public class Owner {
     public String login;
     public String id;
+
+    public Owner(String login, String id) {
+        this.login = login;
+        this.id = id;
+    }
 }

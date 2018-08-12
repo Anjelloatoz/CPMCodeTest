@@ -12,9 +12,10 @@ import java.util.Map;
 
 import anjelloatoz.com.codetestapp.BuildConfig;
 import anjelloatoz.com.codetestapp.Model.GHToken;
-import anjelloatoz.com.codetestapp.Model.Repo;
+import anjelloatoz.com.codetestapp.Model.GeneralCallback;
 import anjelloatoz.com.codetestapp.Network.CallbackNetwork;
 import anjelloatoz.com.codetestapp.Network.NetworkBroker;
+import anjelloatoz.com.codetestapp.ViewModel.RepoModel;
 
 import static com.android.volley.VolleyLog.TAG;
 
@@ -71,13 +72,14 @@ public class ServiceProxy {
         });
     }
 
-    public void requestUserRepos(){
+    public void requestUserRepos(final GeneralCallback callback){
         NetworkBroker.getInstance().sendGet(NetworkBroker.PATH_USER_REPOS, null, new CallbackNetwork() {
             @Override
             public void success(Object result) {
                 Log.e(TAG, "requestUserRepos SUCCESS: "+result.toString());
-                ArrayList<Repo> repo_list = gson.fromJson((String) result, new TypeToken<ArrayList<Repo>>() {
+                ArrayList<RepoModel> repo_list = gson.fromJson((String) result, new TypeToken<ArrayList<RepoModel>>() {
                 }.getType());
+                callback.success(repo_list);
             }
 
             @Override
