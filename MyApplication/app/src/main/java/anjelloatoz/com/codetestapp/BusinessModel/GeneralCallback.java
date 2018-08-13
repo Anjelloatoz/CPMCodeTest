@@ -1,4 +1,4 @@
-package anjelloatoz.com.codetestapp.Model;
+package anjelloatoz.com.codetestapp.BusinessModel;
 
 
 public interface GeneralCallback {

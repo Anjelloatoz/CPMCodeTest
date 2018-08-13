@@ -2,9 +2,9 @@ package anjelloatoz.com.codetestapp.ViewModel;
 
 import android.util.Log;
 
-import anjelloatoz.com.codetestapp.Model.GeneralCallback;
-import anjelloatoz.com.codetestapp.Model.Owner;
-import anjelloatoz.com.codetestapp.Model.Repo;
+import anjelloatoz.com.codetestapp.BusinessModel.GeneralCallback;
+import anjelloatoz.com.codetestapp.BusinessModel.Owner;
+import anjelloatoz.com.codetestapp.BusinessModel.Repo;
 import anjelloatoz.com.codetestapp.Service.ServiceProxy;
 
 /**

@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
-import anjelloatoz.com.codetestapp.Model.Repo;
 import anjelloatoz.com.codetestapp.R;
 import anjelloatoz.com.codetestapp.ViewModel.RepoModel;
 import anjelloatoz.com.codetestapp.databinding.RepoListItemLayoutBinding;

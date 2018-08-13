@@ -5,12 +5,12 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 
 import anjelloatoz.com.codetestapp.Adapter.RepoAdapter;
-import anjelloatoz.com.codetestapp.Model.GeneralCallback;
-import anjelloatoz.com.codetestapp.Model.Repo;
+import anjelloatoz.com.codetestapp.BusinessModel.GeneralCallback;
 import anjelloatoz.com.codetestapp.R;
 import anjelloatoz.com.codetestapp.ViewModel.RepoModel;
 import anjelloatoz.com.codetestapp.databinding.ActivityDataBinding;
@@ -37,6 +37,7 @@ public class DataActivity extends AppCompatActivity {
                 repoModelArrayList = (ArrayList<RepoModel>) result;
                 repoAdapter = new RepoAdapter(context, repoModelArrayList);
                 activityDataBinding.dataList.setAdapter(repoAdapter);
+                activityDataBinding.progressInd.setVisibility(View.GONE);
             }
 
             @Override

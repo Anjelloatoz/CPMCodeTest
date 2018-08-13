@@ -8,7 +8,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import anjelloatoz.com.codetestapp.Constants;
-import anjelloatoz.com.codetestapp.Model.GHToken;
+import anjelloatoz.com.codetestapp.BusinessModel.GHToken;
 
 import static android.content.Context.MODE_PRIVATE;
 

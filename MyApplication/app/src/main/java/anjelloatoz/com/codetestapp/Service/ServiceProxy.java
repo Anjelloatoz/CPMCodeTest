@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import anjelloatoz.com.codetestapp.BuildConfig;
-import anjelloatoz.com.codetestapp.Model.GHToken;
-import anjelloatoz.com.codetestapp.Model.GeneralCallback;
+import anjelloatoz.com.codetestapp.BusinessModel.GHToken;
+import anjelloatoz.com.codetestapp.BusinessModel.GeneralCallback;
 import anjelloatoz.com.codetestapp.Network.CallbackNetwork;
 import anjelloatoz.com.codetestapp.Network.NetworkBroker;
 import anjelloatoz.com.codetestapp.ViewModel.RepoModel;

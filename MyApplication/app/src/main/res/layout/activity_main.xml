@@ -13,5 +13,12 @@
     android:orientation="vertical"
     tools:context="anjelloatoz.com.codetestapp.View.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Request Selection controls should go in this window."
+        android:textSize="@dimen/heading_text_size"
+        android:gravity="center"/>
+
 </LinearLayout>
 </layout>

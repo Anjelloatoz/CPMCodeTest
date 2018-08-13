@@ -1,4 +1,4 @@
-package anjelloatoz.com.codetestapp.Model;
+package anjelloatoz.com.codetestapp.BusinessModel;
 
 /**
  * Created by Anjelloatoz on 8/12/18.
